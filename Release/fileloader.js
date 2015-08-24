@@ -15,8 +15,8 @@ Module.expectedDataFileDownloads++;
       // worker
       PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf('/')) + '/');
     }
-    var PACKAGE_NAME = 'LD33webgl.data';
-    var REMOTE_PACKAGE_BASE = 'LD33webgl.data';
+    var PACKAGE_NAME = 'LD33webglTemp.data';
+    var REMOTE_PACKAGE_BASE = 'LD33webglTemp.data';
     if (typeof Module['locateFilePackage'] === 'function' && !Module['locateFile']) {
       Module['locateFile'] = Module['locateFilePackage'];
       Module.printErr('warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)');
@@ -24,8 +24,8 @@ Module.expectedDataFileDownloads++;
     var REMOTE_PACKAGE_NAME = typeof Module['locateFile'] === 'function' ?
                               Module['locateFile'](REMOTE_PACKAGE_BASE) :
                               ((Module['filePackagePrefixURL'] || '') + REMOTE_PACKAGE_BASE);
-    var REMOTE_PACKAGE_SIZE = 21201121;
-    var PACKAGE_UUID = '87b2f55a-9e65-4149-b4e0-5f3b758a8d39';
+    var REMOTE_PACKAGE_SIZE = 21201105;
+    var PACKAGE_UUID = '1f5cc564-dd2f-4f61-b8cf-b38348b77528';
   
     function fetchRemotePackage(packageName, packageSize, callback, errback) {
       var xhr = new XMLHttpRequest();
@@ -126,9 +126,9 @@ Module['FS_createPath']('/', 'Resources', true, true);
       new DataRequest(0, 1086072, 0, 0).open('GET', '/mainData');
     new DataRequest(1086072, 1086093, 0, 0).open('GET', '/methods_pointedto_by_uievents.xml');
     new DataRequest(1086093, 1481441, 0, 0).open('GET', '/resources.assets');
-    new DataRequest(1481441, 19131921, 0, 0).open('GET', '/sharedassets0.assets');
-    new DataRequest(19131921, 20692293, 0, 0).open('GET', '/Resources/unity_default_resources');
-    new DataRequest(20692293, 21201121, 0, 0).open('GET', '/Resources/unity_builtin_extra');
+    new DataRequest(1481441, 19131905, 0, 0).open('GET', '/sharedassets0.assets');
+    new DataRequest(19131905, 20692277, 0, 0).open('GET', '/Resources/unity_default_resources');
+    new DataRequest(20692277, 21201105, 0, 0).open('GET', '/Resources/unity_builtin_extra');
 
     function processPackageData(arrayBuffer) {
       Module.finishedDataFileDownloads++;
@@ -144,10 +144,10 @@ Module['FS_createPath']('/', 'Resources', true, true);
           DataRequest.prototype.requests["/sharedassets0.assets"].onload();
           DataRequest.prototype.requests["/Resources/unity_default_resources"].onload();
           DataRequest.prototype.requests["/Resources/unity_builtin_extra"].onload();
-          Module['removeRunDependency']('datafile_LD33webgl.data');
+          Module['removeRunDependency']('datafile_LD33webglTemp.data');
 
     };
-    Module['addRunDependency']('datafile_LD33webgl.data');
+    Module['addRunDependency']('datafile_LD33webglTemp.data');
   
     if (!Module.preloadResults) Module.preloadResults = {};
   
